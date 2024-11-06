@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect('Visitantes/main');
+});
+Route::prefix('Visitantes')->group(function () {
+    route::get('main', function(){
+        return view('visitantes.index');
+
+    })->name('main');
+
 });
